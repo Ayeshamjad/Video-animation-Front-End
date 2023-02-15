@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL Task</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script>
+      const urls = ["../public/4.mp4", "../public/5.mp4", "../public/1.mp4", "../public/3.mp4"];
+      const headings = [
+        "CyberFunk",
+        "Meet the future",
+        "Next level GFX",
+        "Team of teams",
+      ];
+      const cards = ["cardone", "cardtwo", "cardthree", "cardfour"];
+      let index = 0;
+      let index2 = 0;
+      function videoForward() {
+        console.log("Next1", index);
+        if (index === 3) {
+          document.getElementById("myVideo").src = urls[0];
+          document.getElementById("head").innerText = headings[0];
+          document.getElementById(cards[0]).style =
+            "background: var(--bs-yellow); color: black !important;";
+          document.getElementById(cards[index]).style =
+            "background: transparent !important; color: white !important;";
+          index = 0;
+        } else {
+          document.getElementById("myVideo").src = urls[index + 1];
+          document.getElementById("head").innerText = headings[index + 1];
+          document.getElementById(cards[index + 1]).style =
+            "background: var(--bs-yellow); color: black !important;";
+          document.getElementById(cards[index]).style =
+            "background: transparent !important; color: white !important;";
+          index++;
+        }
+      }
+      function videoPrevious() {
+        console.log("Previous", index);
+        if (index === 0) {
+          document.getElementById("myVideo").src = urls[3];
+          document.getElementById("head").innerText = headings[3];
+          document.getElementById(cards[3]).style =
+            "background: var(--bs-yellow); color: black !important;";
+          document.getElementById(cards[index]).style =
+            "background: transparent !important; color: white !important;";
+          index = 3;
+        } else {
+          document.getElementById("myVideo").src = urls[index - 1];
+          document.getElementById("head").innerText = headings[index - 1];
+          document.getElementById(cards[index - 1]).style =
+            "background: var(--bs-yellow); color: black !important;";
+          document.getElementById(cards[index]).style =
+            "background: transparent !important; color: white !important;";
+          index--;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <video
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      class="position-fixed right-0 bottom-0 min-w-100 min-h-100"
+    >
+      <source src="../public/4.mp4" type="video/mp4" />
+    </video>
+    <section class="container position-relative mt-10">
+      <h1
+        class="display-1 fw-bolder"
+        style="
+          color: var(--bs-yellow);
+          transform: scale(0.94);
+          animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        "
+      >
+        <i id="head">CyberFunk</i>
+      </h1>
+      <div
+        class="card bg-transparent rounded-0 p-2"
+        style="
+          width: 30rem;
+          transform: skewX(-8deg);
+          border: 1px solid var(--bs-secondary) !important;
+          color: var(--bs-white);
+          backdrop-filter: blur(25px) saturate(100%);
+        "
+      >
+        <div class="card-body">
+          <p
+            class="card-text"
+            id="text"
+            style="
+              transform: scale(0.94);
+              animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+            "
+          >
+            Get the dystopian vibes of a cyberfunk future in your
+            <br />Wordpress projects with this exclusive Slider <br />Revolution
+            Design._
+          </p>
+          <a
+            href="#"
+            class="btn border-0 rounded-0 p-2"
+            style="
+              background: var(--bs-yellow) !important;
+              margin-left: 70% !important;
+              margin-bottom: -55px !important;
+              transform: scale(0.94);
+              animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+            "
+            >Continue</a
+          >
+        </div>
+      </div>
+      <div class="container d-flex justify-content-center mt-5">
+        <button type="button" class="btn arrows" onclick="videoPrevious()">
+          <img class="w-8" src="../public/angle-left.svg" alt="" />
+        </button>
+        <button type="button" class="btn arrows" onclick="videoForward()">
+          <img class="w-8" src="../public/angle-right.svg" alt="" />
+        </button>
+      </div>
+    </section>
+    <div
+      class="container-fluid position-fixed left-0 bottom-0 d-flex justify-content-around"
+      style="backdrop-filter: blur(15px) saturate(100%)"
+    >
+      <div
+        class="card border-0 d-flex flex-row bg-transparent mt-3 mb-3"
+        style="width: 18rem"
+      >
+        <img
+          src="../public/4.JPG"
+          class="card-img-top rounded-0"
+          alt="..."
+          style="width: 50%"
+        />
+        <div
+          class="card-body newbody text-black"
+          id="cardone"
+          style="background: var(--bs-yellow)"
+        >
+          <h5 class="card-title fw-bold">01</h5>
+          <p class="card-text">CyberFunk</p>
+        </div>
+      </div>
+      <div
+        class="card border-0 d-flex flex-row bg-transparent mt-3 mb-3"
+        style="width: 18rem"
+      >
+        <img
+          src="../public/5.JPG"
+          class="card-img-top rounded-0"
+          alt="..."
+          style="width: 50%"
+        />
+        <div class="card-body newbody text-white" id="cardtwo">
+          <h5 class="card-title fw-bold">02</h5>
+          <p class="card-text">Meet the futur</p>
+        </div>
+      </div>
+      <div
+        class="card border-0 d-flex flex-row bg-transparent mt-3 mb-3"
+        style="width: 18rem"
+      >
+        <img
+          src="../public/1.JPG"
+          class="card-img-top rounded-0"
+          alt="..."
+          style="width: 50%"
+        />
+        <div class="card-body newbody text-white" id="cardthree">
+          <h5 class="card-title fw-bold">03</h5>
+          <p class="card-text">Next level GFX</p>
+        </div>
+      </div>
+      <div
+        class="card border-0 d-flex flex-row bg-transparent mt-3 mb-3"
+        style="width: 18rem"
+      >
+        <img
+          src="../public/3.JPG"
+          class="card-img-top rounded-0"
+          alt="..."
+          style="width: 50%"
+        />
+        <div class="card-body newbody text-white" id="cardfour">
+          <h5 class="card-title fw-bold">04</h5>
+          <p class="card-text newtext">Team of teams</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

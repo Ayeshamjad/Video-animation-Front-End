@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.mt-10 {
+  margin-top: 10% !important;
+}
+
+.w-8 {
+  width: 8%;
+}
+
+.w-5 {
+  width: 50%;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.btn:hover {
+  color: black !important;
+}
+
+.newbody {
+  -webkit-clip-path: polygon(88% 0, 100% 13%, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(88% 0, 100% 13%, 100% 100%, 0 100%, 0 0);
+}
+
+:root {
+  --bs-yellow: #ffc107;
+  --bs-white: #fff;
+  --bs-secondary: #6c757d;
+}
